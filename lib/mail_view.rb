@@ -98,6 +98,7 @@ class MailView
     end
 
     def build_mail(name, request)
+      @request = request
       mail = send(name)
       Mail.inform_interceptors(mail) if defined? Mail
       mail
